@@ -77,16 +77,16 @@ module alarmClk(
                 default: begin
                     min1 <= c_min1;
                     min2 <= c_min2;
-                    hr1 <= c_sec1;
-                    hr2 <= c_sec2;
+                    hr1 <= c_hr1;
+                    hr2 <= c_hr2;
                 end
             endcase
         end
         else begin
             min1 <= c_min1;
             min2 <= c_min2;
-            hr1 <= c_sec1;
-            hr2 <= c_sec2;
+            hr1 <= c_hr1;
+            hr2 <= c_hr2;
         end
     end
     assign a_hr1 = a_hr/6'd10;
@@ -94,15 +94,15 @@ module alarmClk(
     assign a_min1 = a_min/6'd10;
     assign a_min2 = a_min%6'd10;
 
+    assign c_min1 = c_min/6'd10;
+    assign c_min2 = c_min%6'd10;
+    assign c_hr1 = c_hour/6'd10;
+    assign c_hr2 = c_hour%6'd10;
+
 //    assign c_min1 = c_min/6'd10;
 //    assign c_min2 = c_min%6'd10;
-//    assign c_hr1 = c_hour/6'd10;
-//    assign c_hr2 = c_hour%6'd10;
-
-assign c_min1 = c_min/6'd10;
-    assign c_min2 = c_min%6'd10;
-    assign c_sec1 = c_sec / 10;
-    assign c_sec2 = c_sec % 10;
+//    assign c_sec1 = c_sec / 10;
+//    assign c_sec2 = c_sec % 10;
 
     //    assign hr1 = hour/10;
     //    assign hr2 = hour%10;
